@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Whisker's Cafe Menu</title>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&family=Caveat:wght@700&display=swap" rel="stylesheet">
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:Poppins,sans-serif;background:#f5efe8;color:#4a342e;overflow-x:hidden}
+nav{background:#7b5a50;padding:14px;position:sticky;top:0;z-index:100}
+nav ul{display:flex;justify-content:center;gap:25px;list-style:none;flex-wrap:wrap}
+nav a{color:white;text-decoration:none;font-weight:700}
+.hero{padding:80px 20px;text-align:center;background:
+radial-gradient(circle,#d9d0c8 8px,transparent 9px) 0 0/120px 120px,
+#f5efe8;}
+.hero h1{font-family:Caveat,cursive;font-size:5rem;color:#8b5e52;line-height:1}
+.menu-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:40px;padding:50px 8%}
+.board{background:#fff;border:8px solid #d6a66f;border-radius:12px;padding:25px;box-shadow:0 10px 25px rgba(0,0,0,.1);position:relative;transition:.4s}
+.board:hover{transform:translateY(-10px)}
+.board h2{font-family:Caveat,cursive;font-size:3rem;text-align:center;margin-bottom:15px}
+.board ul{list-style:none;text-align:center}
+.board li{padding:4px 0;font-weight:600}
+.specials{margin:20px 8% 60px;background:#2f2f2f;color:white;padding:50px;border-radius:12px;text-align:center;box-shadow:0 10px 30px rgba(0,0,0,.2)}
+.specials h2{font-family:Caveat,cursive;font-size:3.5rem}
+.specials p{font-size:1.5rem;font-weight:700;margin:8px 0}
+.notice{text-align:center;margin-top:20px}
+.reveal{opacity:0;transform:translateY(40px);filter:blur(10px);transition:1s}
+.reveal.active{opacity:1;transform:none;filter:none}
+footer{text-align:center;padding:25px;background:white;font-weight:700}
+@media(max-width:900px){.menu-grid{grid-template-columns:1fr}.hero h1{font-size:3.5rem}}
+</style>
+</head>
+<body>
+
+<nav>
+<ul>
+<li><a href="index.html">HOME</a></li>
+<li><a href="meetthecats.html">MEET THE CATS</a></li>
+<li><a href="menu.html">MENU</a></li>
+<li><a href="book.html">BOOK</a></li>
+<li><a href="adopt.html">ADOPT</a></li>
+<li><a href="merchandise.html">MERCHANDISE</a></li>
+<li><a href="about.html">ABOUT US</a></li>
+<li><a href="contact.html">CONTACT</a></li>
+</ul>
+</nav>
+
+<section class="hero">
+<h1>Discover Our Wide<br>Range Of Food And Drinks</h1>
+</section>
+
+<div class="menu-grid">
+
+<div class="board reveal">
+<h2>☕ Coffee</h2>
+<ul>
+<li>Espresso — £2.50</li>
+<li>Americano — £3.00</li>
+<li>Flat White — £3.50</li>
+<li>Cappuccino — £3.75</li>
+<li>Mocha — £4.25</li>
+<li>Caramel Latte — £4.50</li>
+<li>Vanilla Latte — £4.50</li>
+</ul>
+</div>
+
+<div class="board reveal">
+<h2>🧋 Iced Drinks</h2>
+<ul>
+<li>Iced Latte — £4.25</li>
+<li>Iced Mocha — £4.50</li>
+<li>Berry Smoothie — £4.95</li>
+<li>Mango Smoothie — £4.95</li>
+<li>Chocolate Milkshake — £4.95</li>
+</ul>
+</div>
+
+<div class="board reveal">
+<h2>🍰 Desserts</h2>
+<ul>
+<li>Chocolate Brownie — £3.50</li>
+<li>Red Velvet Cake — £4.95</li>
+<li>Cheesecake — £5.25</li>
+<li>Cupcake Of The Day — £3.25</li>
+<li>Belgian Waffle — £5.95</li>
+</ul>
+</div>
+
+<div class="board reveal">
+<h2>🥪 Light Bites</h2>
+<ul>
+<li>Cheese Toastie — £5.50</li>
+<li>Ham & Cheese Toastie — £5.95</li>
+<li>Bagel With Cream Cheese — £4.50</li>
+<li>Soup Of The Day — £4.95</li>
+<li>Nachos — £5.50</li>
+</ul>
+</div>
+
+</div>
+
+<div class="specials reveal">
+<h2>House Specials</h2>
+<p>Purr-fect Latte — £4.95</p>
+<p>Whisker Mocha — £4.95</p>
+<p>The Great Catsby Shake — £5.50</p>
+<p>Meowcha Frappe — £5.50</p>
+
+<div class="notice">⚠️ Those big eyes may be convincing, but please don't feed the cats!</div>
+</div>
+
+<footer>Created by Adan © 2026</footer>
+
+<script>
+const o=new IntersectionObserver(e=>{
+e.forEach(x=>{if(x.isIntersecting)x.target.classList.add('active')})
+});
+document.querySelectorAll('.reveal').forEach(el=>o.observe(el));
+</script>
+
+</body>
+</html>

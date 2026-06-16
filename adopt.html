@@ -1,0 +1,278 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Adopt A Cat - Whisker's Café</title>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&family=Caveat:wght@700&display=swap" rel="stylesheet">
+<style>
+*{margin:0;padding:0;box-sizing:border-box;scroll-behavior:smooth}
+body{font-family:Poppins,sans-serif;background:#F5EDE4;color:#4A342E;overflow-x:hidden}
+nav{background:#7B5A50;padding:15px;position:sticky;top:0;z-index:999}
+nav ul{display:flex;justify-content:center;gap:25px;list-style:none;flex-wrap:wrap}
+nav a{color:white;text-decoration:none;font-weight:700}
+
+.hero{
+min-height:85vh;
+display:flex;
+align-items:center;
+justify-content:center;
+text-align:center;
+padding:40px;
+background:radial-gradient(circle,#d8c2a3 3px,transparent 4px) 0 0/100px 100px;
+}
+.hero h1{
+font-family:Caveat,cursive;
+font-size:6rem;
+color:#8B5E52;
+}
+.hero p{font-size:1.3rem;margin-top:15px}
+
+.reveal{
+opacity:0;
+filter:blur(10px);
+transform:translateY(50px);
+transition:1s;
+}
+.reveal.active{
+opacity:1;
+filter:none;
+transform:none;
+}
+
+.banner{
+width:90%;
+margin:40px auto;
+background:#CBA889;
+padding:60px;
+border-radius:40px;
+color:white;
+text-align:center;
+}
+
+.cats{
+width:90%;
+margin:50px auto;
+display:grid;
+grid-template-columns:repeat(2,1fr);
+gap:35px;
+}
+
+.cat{
+background:white;
+border-radius:30px;
+overflow:hidden;
+box-shadow:0 10px 25px rgba(0,0,0,.08);
+transition:.4s;
+}
+.cat:hover{
+transform:translateY(-10px) scale(1.02);
+}
+.cat img{
+width:100%;
+height:320px;
+object-fit:cover;
+}
+.cat-content{
+padding:25px;
+}
+.tag{
+display:inline-block;
+padding:6px 12px;
+background:#f5ede4;
+border-radius:20px;
+margin:5px;
+}
+
+.quiz{
+width:90%;
+margin:60px auto;
+background:white;
+padding:50px;
+border-radius:35px;
+text-align:center;
+}
+.quiz h2{
+font-family:Caveat,cursive;
+font-size:4rem;
+margin-bottom:20px;
+}
+
+.timeline{
+width:90%;
+margin:50px auto;
+display:grid;
+grid-template-columns:repeat(4,1fr);
+gap:20px;
+}
+.step{
+background:white;
+padding:30px;
+border-radius:25px;
+text-align:center;
+}
+
+.stories{
+width:90%;
+margin:50px auto;
+display:grid;
+grid-template-columns:repeat(2,1fr);
+gap:25px;
+}
+.story{
+background:white;
+padding:30px;
+border-radius:25px;
+}
+
+.cta{
+width:90%;
+margin:50px auto;
+background:#8B5E52;
+color:white;
+padding:70px;
+border-radius:40px;
+text-align:center;
+}
+.cta h2{
+font-family:Caveat,cursive;
+font-size:4rem;
+}
+
+.btn{
+background:#9B745E;
+color:white;
+border:none;
+padding:15px 35px;
+border-radius:40px;
+cursor:pointer;
+font-weight:700;
+margin-top:20px;
+}
+
+footer{
+text-align:center;
+padding:30px;
+background:white;
+margin-top:40px;
+}
+
+@media(max-width:900px){
+.cats,.timeline,.stories{
+grid-template-columns:1fr;
+}
+.hero h1{
+font-size:3.5rem;
+}
+}
+</style>
+</head>
+<body>
+
+<nav>
+<ul>
+<li><a href="index.html">HOME</a></li>
+<li><a href="meetthecats.html">MEET THE CATS</a></li>
+<li><a href="menu.html">MENU</a></li>
+<li><a href="book.html">BOOK</a></li>
+<li><a href="adopt.html">ADOPT</a></li>
+<li><a href="merchandise.html">MERCHANDISE</a></li>
+<li><a href="about.html">ABOUT US</a></li>
+<li><a href="contact.html">CONTACT</a></li>
+</ul>
+</nav>
+
+<section class="hero">
+<div>
+<h1>Every Cat Deserves A Loving Home ❤️</h1>
+<p>Meet the cats waiting for their forever family.</p>
+</div>
+</section>
+
+<section class="banner reveal">
+<h2>🐾 Adoption Success Rate: 100%</h2>
+<p>100% of adopted cats successfully became someone's best friend.</p>
+</section>
+
+<section class="cats">
+
+<div class="cat reveal">
+<img src="https://placehold.co/600x400/CBA889/FFFFFF?text=POPPY">
+<div class="cat-content">
+<h2>POPPY</h2>
+<span class="tag">Age 2</span>
+<span class="tag">Chaotic</span>
+<span class="tag">Treat Addict</span>
+<p><br>Wanted in 3 countries for nugget theft.</p>
+<button class="btn">Meet Me</button>
+</div>
+</div>
+
+<div class="cat reveal">
+<img src="https://placehold.co/600x400/CBA889/FFFFFF?text=LARRY">
+<div class="cat-content">
+<h2>LARRY</h2>
+<span class="tag">Age 4</span>
+<span class="tag">Gentleman</span>
+<span class="tag">Professional Sleeper</span>
+<p><br>Currently investigating missing biscuits.</p>
+<button class="btn">Meet Me</button>
+</div>
+</div>
+
+</section>
+
+<section class="quiz reveal">
+<h2>Are You Worthy?</h2>
+<p>☑ I understand cats are superior beings</p>
+<p>☑ I will provide unlimited cuddles</p>
+<p>☑ I accept being ignored occasionally</p>
+<p>☑ I will not commit treat theft</p>
+<br>
+<h3>Cat Compatibility Score: 97%</h3>
+</section>
+
+<section class="timeline reveal">
+<div class="step">1️⃣ Apply</div>
+<div class="step">2️⃣ Interview</div>
+<div class="step">3️⃣ Cat Approval</div>
+<div class="step">4️⃣ Take Home</div>
+</section>
+
+<section class="stories">
+
+<div class="story reveal">
+<h3>⭐ Emily & Larry</h3>
+<p>"Best decision ever. Larry now supervises all my meetings."</p>
+</div>
+
+<div class="story reveal">
+<h3>⭐ Ahmed & Poppy</h3>
+<p>"She stole my nuggets on day one. I knew she was the one."</p>
+</div>
+
+</section>
+
+<section class="cta reveal">
+<h2>Ready To Meet Your Best Friend?</h2>
+<p>Start your adoption journey today.</p>
+<button class="btn">APPLY NOW</button>
+</section>
+
+<footer>
+Whisker's Café © 2026
+</footer>
+
+<script>
+const observer=new IntersectionObserver(entries=>{
+entries.forEach(entry=>{
+if(entry.isIntersecting){
+entry.target.classList.add('active');
+}
+});
+});
+document.querySelectorAll('.reveal').forEach(el=>observer.observe(el));
+</script>
+
+</body>
+</html>

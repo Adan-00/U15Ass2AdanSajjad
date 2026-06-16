@@ -1,0 +1,339 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Whisker's Café - Book V2</title>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&family=Caveat:wght@700&display=swap" rel="stylesheet">
+<style>
+*{margin:0;padding:0;box-sizing:border-box;scroll-behavior:smooth}
+body{
+font-family:Poppins,sans-serif;
+background:#F5EDE4;
+color:#4A342E;
+overflow-x:hidden;
+}
+
+/* Floating paws */
+.paw{
+position:fixed;
+font-size:30px;
+opacity:.08;
+pointer-events:none;
+animation:float 15s linear infinite;
+}
+@keyframes float{
+from{transform:translateY(110vh)}
+to{transform:translateY(-120vh) rotate(360deg)}
+}
+
+/* Navbar */
+nav{
+position:sticky;
+top:0;
+background:rgba(123,90,80,.95);
+backdrop-filter:blur(10px);
+padding:15px;
+z-index:999;
+}
+nav ul{
+display:flex;
+justify-content:center;
+gap:25px;
+list-style:none;
+flex-wrap:wrap;
+}
+nav a{
+color:white;
+text-decoration:none;
+font-weight:700;
+}
+
+/* Hero */
+.hero{
+min-height:70vh;
+display:flex;
+align-items:center;
+justify-content:center;
+text-align:center;
+padding:40px;
+position:relative;
+}
+.hero h1{
+font-family:Caveat,cursive;
+font-size:6rem;
+color:#8B5E52;
+animation:fadeUp 1.5s ease;
+}
+.hero p{
+font-size:1.2rem;
+margin-top:15px;
+}
+.steam{
+position:absolute;
+top:20%;
+font-size:80px;
+opacity:.08;
+animation:steam 6s infinite ease-in-out;
+}
+@keyframes steam{
+50%{transform:translateY(-20px)}
+}
+@keyframes fadeUp{
+from{opacity:0;transform:translateY(50px)}
+to{opacity:1;transform:none}
+}
+
+/* Scroll reveal */
+.reveal{
+opacity:0;
+filter:blur(10px);
+transform:translateY(50px);
+transition:1s;
+}
+.reveal.active{
+opacity:1;
+filter:none;
+transform:none;
+}
+
+/* Rules */
+.rules{
+background:#8B5E52;
+color:white;
+width:90%;
+margin:30px auto;
+padding:60px;
+border-radius:35px;
+text-align:center;
+position:relative;
+overflow:hidden;
+}
+.rules h2{
+font-family:Caveat,cursive;
+font-size:4rem;
+margin-bottom:20px;
+}
+.rules::before,.rules::after{
+content:'';
+position:absolute;
+background:#d8c2a3;
+border-radius:50%;
+opacity:.7;
+}
+.rules::before{
+width:250px;height:250px;left:-100px;top:-80px;
+}
+.rules::after{
+width:300px;height:300px;right:-120px;bottom:-120px;
+}
+
+/* Form */
+.form{
+width:90%;
+max-width:1000px;
+margin:40px auto;
+padding:40px;
+background:rgba(255,255,255,.7);
+backdrop-filter:blur(15px);
+border-radius:30px;
+box-shadow:0 15px 30px rgba(0,0,0,.08);
+}
+.grid{
+display:grid;
+grid-template-columns:1fr 1fr;
+gap:20px;
+}
+input,select,textarea{
+width:100%;
+padding:15px;
+border:2px solid #e7d9cc;
+border-radius:15px;
+margin-top:8px;
+}
+.full{grid-column:1/-1}
+.btn{
+background:#9B745E;
+color:white;
+border:none;
+padding:15px 35px;
+border-radius:40px;
+cursor:pointer;
+font-weight:700;
+transition:.3s;
+}
+.btn:hover{
+transform:translateY(-5px) scale(1.05);
+}
+
+/* Cat approval meter */
+.meter{
+width:90%;
+margin:40px auto;
+text-align:center;
+}
+.bar{
+height:25px;
+background:#ddd;
+border-radius:30px;
+overflow:hidden;
+}
+.fill{
+height:100%;
+width:92%;
+background:#9B745E;
+animation:load 3s ease;
+}
+@keyframes load{
+from{width:0}
+to{width:92%}
+}
+
+/* Modal */
+.modal{
+display:none;
+position:fixed;
+inset:0;
+background:rgba(0,0,0,.5);
+backdrop-filter:blur(8px);
+justify-content:center;
+align-items:center;
+z-index:9999;
+}
+.modal-content{
+background:white;
+padding:35px;
+border-radius:25px;
+text-align:center;
+max-width:500px;
+width:90%;
+}
+
+/* Cards */
+.cards{
+width:90%;
+margin:50px auto;
+display:grid;
+grid-template-columns:repeat(4,1fr);
+gap:20px;
+}
+.card{
+background:white;
+padding:25px;
+border-radius:20px;
+text-align:center;
+transition:.3s;
+}
+.card:hover{
+transform:translateY(-10px);
+}
+
+footer{
+text-align:center;
+padding:30px;
+background:white;
+margin-top:40px;
+font-weight:700;
+}
+
+@media(max-width:900px){
+.grid,.cards{grid-template-columns:1fr}
+.hero h1{font-size:3.5rem}
+}
+</style>
+</head>
+<body>
+
+<div class="paw" style="left:10%">🐾</div>
+<div class="paw" style="left:30%;animation-delay:3s">🐾</div>
+<div class="paw" style="left:60%;animation-delay:6s">🐾</div>
+<div class="paw" style="left:85%;animation-delay:1s">🐾</div>
+
+<nav>
+<ul>
+<li><a href="index.html">HOME</a></li>
+<li><a href="meetthecats.html">MEET THE CATS</a></li>
+<li><a href="menu.html">MENU</a></li>
+<li><a href="book.html">BOOK</a></li>
+<li><a href="adopt.html">ADOPT</a></li>
+<li><a href="merchandise.html">MERCHANDISE</a></li>
+<li><a href="about.html">ABOUT US</a></li>
+<li><a href="contact.html">CONTACT</a></li>
+</ul>
+</nav>
+
+<section class="hero">
+<div class="steam">☕</div>
+<div>
+<h1>Book Your Visit</h1>
+<p>The cats will now review your application.</p>
+</div>
+</section>
+
+<section class="rules reveal">
+<h2>Before You Visit</h2>
+<p>🐾 Do not feed the cats</p>
+<p>🐾 Respect sleeping cats</p>
+<p>🐾 No flash photography</p>
+<p>🐾 Children must be supervised</p>
+<p>🐾 The cats are the real managers here</p>
+</section>
+
+<section class="form reveal">
+<div class="grid">
+<div><input placeholder="Full Name"></div>
+<div><input placeholder="Email"></div>
+<div><input type="date"></div>
+<div><select><option>Choose Time</option></select></div>
+<div class="full"><textarea rows="4" placeholder="Special Requests"></textarea></div>
+<div class="full" style="text-align:center">
+<button class="btn" onclick="showModal()">BOOK MY VISIT</button>
+</div>
+</div>
+</section>
+
+<section class="meter reveal">
+<h2>🐱 Cat Approval Rating</h2>
+<br>
+<div class="bar"><div class="fill"></div></div>
+<p>92% chance Larry approves your visit.</p>
+</section>
+
+<section class="cards reveal">
+<div class="card">🐾 Respect Cats</div>
+<div class="card">📸 Photos Welcome</div>
+<div class="card">🍪 No Feeding</div>
+<div class="card">👑 Cat Approved</div>
+</section>
+
+<div class="modal" id="modal">
+<div class="modal-content">
+<h2>🎉 Booking Sent!</h2>
+<p>The council of cats will review your request shortly.</p>
+<br>
+<button class="btn" onclick="closeModal()">Close</button>
+</div>
+</div>
+
+<footer>Created by Adan © 2026</footer>
+
+<script>
+const observer=new IntersectionObserver(entries=>{
+entries.forEach(entry=>{
+if(entry.isIntersecting){
+entry.target.classList.add('active');
+}
+});
+});
+document.querySelectorAll('.reveal').forEach(el=>observer.observe(el));
+
+function showModal(){
+document.getElementById('modal').style.display='flex';
+}
+function closeModal(){
+document.getElementById('modal').style.display='none';
+}
+</script>
+
+</body>
+</html>

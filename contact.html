@@ -1,0 +1,504 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Contact Us | Whisker's Café</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&family=Caveat:wght@700&display=swap" rel="stylesheet">
+
+<style>
+
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+scroll-behavior:smooth;
+}
+
+body{
+font-family:'Poppins',sans-serif;
+background:#F5EFE8;
+color:#4A342E;
+overflow-x:hidden;
+}
+
+/* Floating Paw Prints */
+
+.paw{
+position:fixed;
+font-size:30px;
+opacity:0.06;
+pointer-events:none;
+animation:floatPaw 15s linear infinite;
+z-index:-1;
+}
+
+@keyframes floatPaw{
+from{
+transform:translateY(120vh) rotate(0deg);
+}
+to{
+transform:translateY(-120vh) rotate(360deg);
+}
+}
+
+/* Navbar */
+
+nav{
+position:sticky;
+top:0;
+background:rgba(123,90,80,0.95);
+backdrop-filter:blur(10px);
+z-index:1000;
+padding:15px;
+}
+
+nav ul{
+display:flex;
+justify-content:center;
+gap:25px;
+list-style:none;
+flex-wrap:wrap;
+}
+
+nav a{
+color:white;
+text-decoration:none;
+font-weight:600;
+transition:0.3s;
+}
+
+nav a:hover{
+color:#F5EDE4;
+}
+
+/* Hero */
+
+.hero{
+height:350px;
+background:
+linear-gradient(rgba(0,0,0,0.3),rgba(0,0,0,0.3)),
+url("https://images.unsplash.com/photo-1517248135467-4c7edcad34c4");
+background-size:cover;
+background-position:center;
+display:flex;
+justify-content:center;
+align-items:center;
+text-align:center;
+}
+
+.hero h1{
+font-family:'Caveat',cursive;
+font-size:6rem;
+color:white;
+animation:fadeIn 1.5s ease;
+}
+
+@keyframes fadeIn{
+from{
+opacity:0;
+transform:translateY(50px);
+}
+to{
+opacity:1;
+transform:none;
+}
+}
+
+/* Reveal Animation */
+
+.reveal{
+opacity:0;
+transform:translateY(40px);
+filter:blur(10px);
+transition:1s;
+}
+
+.reveal.active{
+opacity:1;
+transform:none;
+filter:none;
+}
+
+/* Welcome Banner */
+
+.banner{
+width:90%;
+margin:40px auto;
+background:#CBA889;
+padding:45px;
+border-radius:30px;
+color:white;
+text-align:center;
+}
+
+/* Contact Section */
+
+.contact-container{
+width:90%;
+margin:auto;
+display:grid;
+grid-template-columns:1fr 1fr;
+gap:30px;
+}
+
+.contact-box,
+.form-box{
+background:white;
+padding:35px;
+border-radius:25px;
+box-shadow:0 10px 25px rgba(0,0,0,0.08);
+transition:0.3s;
+}
+
+.contact-box:hover,
+.form-box:hover{
+transform:translateY(-8px);
+}
+
+.contact-box h2,
+.form-box h2{
+margin-bottom:15px;
+}
+
+.contact-box p{
+margin:15px 0;
+}
+
+/* Form */
+
+input,
+textarea{
+width:100%;
+padding:15px;
+margin-top:12px;
+border:2px solid #E7D9CC;
+border-radius:15px;
+font-size:1rem;
+}
+
+textarea{
+resize:none;
+}
+
+button{
+margin-top:15px;
+background:#9B745E;
+color:white;
+border:none;
+padding:15px 30px;
+border-radius:30px;
+cursor:pointer;
+font-weight:600;
+transition:0.3s;
+}
+
+button:hover{
+transform:translateY(-3px);
+}
+
+/* Hours Cards */
+
+.hours{
+width:90%;
+margin:40px auto;
+display:grid;
+grid-template-columns:repeat(3,1fr);
+gap:20px;
+}
+
+.card{
+background:white;
+padding:25px;
+text-align:center;
+border-radius:20px;
+box-shadow:0 8px 20px rgba(0,0,0,0.08);
+transition:0.3s;
+}
+
+.card:hover{
+transform:translateY(-10px);
+}
+
+/* Funny Stats */
+
+.stats{
+width:90%;
+margin:40px auto;
+display:grid;
+grid-template-columns:repeat(3,1fr);
+gap:20px;
+}
+
+.stat{
+background:white;
+padding:30px;
+border-radius:20px;
+text-align:center;
+}
+
+/* Map */
+
+.map{
+width:90%;
+margin:40px auto;
+background:white;
+padding:20px;
+border-radius:25px;
+}
+
+.map img{
+width:100%;
+border-radius:20px;
+transition:0.5s;
+}
+
+.map img:hover{
+transform:scale(1.02);
+}
+
+/* Social */
+
+.social{
+width:90%;
+margin:40px auto;
+background:#8B5E52;
+color:white;
+padding:50px;
+border-radius:30px;
+text-align:center;
+}
+
+.social h2{
+font-family:'Caveat',cursive;
+font-size:3rem;
+margin-bottom:15px;
+}
+
+/* Modal */
+
+.modal{
+display:none;
+position:fixed;
+inset:0;
+background:rgba(0,0,0,0.5);
+backdrop-filter:blur(8px);
+justify-content:center;
+align-items:center;
+z-index:9999;
+}
+
+.modal-content{
+background:white;
+padding:35px;
+border-radius:25px;
+text-align:center;
+width:90%;
+max-width:500px;
+}
+
+/* Footer */
+
+footer{
+margin-top:40px;
+background:white;
+padding:25px;
+text-align:center;
+font-weight:700;
+}
+
+/* Mobile */
+
+@media(max-width:900px){
+
+.contact-container,
+.hours,
+.stats{
+grid-template-columns:1fr;
+}
+
+.hero h1{
+font-size:3.5rem;
+}
+
+}
+
+</style>
+</head>
+
+<body>
+
+<div class="paw" style="left:10%">🐾</div>
+<div class="paw" style="left:30%;animation-delay:3s">🐾</div>
+<div class="paw" style="left:60%;animation-delay:6s">🐾</div>
+<div class="paw" style="left:85%;animation-delay:2s">🐾</div>
+
+<nav>
+<ul>
+<li><a href="index.html">HOME</a></li>
+<li><a href="meetthecats.html">MEET THE CATS</a></li>
+<li><a href="menu.html">MENU</a></li>
+<li><a href="book.html">BOOK</a></li>
+<li><a href="adopt.html">ADOPT</a></li>
+<li><a href="merchandise.html">MERCHANDISE</a></li>
+<li><a href="about.html">ABOUT US</a></li>
+<li><a href="contact.html">CONTACT</a></li>
+</ul>
+</nav>
+
+<section class="hero">
+<h1>CONTACT US</h1>
+</section>
+
+<section class="banner reveal">
+<h2>🐾 We'd Love To Hear From You</h2>
+<p>Questions, feedback or cat appreciation? Send us a message.</p>
+</section>
+
+<section class="contact-container">
+
+<div class="contact-box reveal">
+<h2>Get In Touch ☕</h2>
+
+<p>📍 Manchester City Centre</p>
+<p>📞 0161 123 4567</p>
+<p>📧 hello@whiskerscafe.co.uk</p>
+<p>📸 @WhiskersCafe</p>
+
+<br>
+
+<p><strong>Fun Fact:</strong> Larry has never replied to an email.</p>
+</div>
+
+<div class="form-box reveal">
+<h2>Send A Message 🐱</h2>
+
+<input type="text" placeholder="Your Name">
+<input type="email" placeholder="Email Address">
+
+<textarea rows="5" placeholder="Write your message..."></textarea>
+
+<button onclick="openModal()">SEND MESSAGE</button>
+
+</div>
+
+</section>
+
+<section class="hours">
+
+<div class="card reveal">
+<h3>☕ Opening Hours</h3>
+<p>Mon - Fri<br>9am - 6pm</p>
+</div>
+
+<div class="card reveal">
+<h3>🐱 Cat Lounge</h3>
+<p>10am - 5pm Daily</p>
+</div>
+
+<div class="card reveal">
+<h3>📍 Location</h3>
+<p>Manchester City Centre</p>
+</div>
+
+</section>
+
+<section class="stats">
+
+<div class="stat reveal">
+<h2>4921</h2>
+<p>Coffees Consumed While Replying</p>
+</div>
+
+<div class="stat reveal">
+<h2>127</h2>
+<p>Cats Rehomed</p>
+</div>
+
+<div class="stat reveal">
+<h2>0</h2>
+<p>Emails Replied To By Larry</p>
+</div>
+
+</section>
+
+<section class="map reveal">
+
+<h2>🗺️ Find Us</h2>
+
+<br>
+
+<img src="https://placehold.co/1200x500/D9C3A3/FFFFFF?text=MAP+LOCATION">
+
+</section>
+
+<section class="social reveal">
+
+<h2>Follow Our Journey</h2>
+
+<p>
+Instagram • TikTok • Facebook
+</p>
+
+<br>
+
+<p>
+See daily cat updates, café events and Larry's questionable management decisions.
+</p>
+
+</section>
+
+<div class="modal" id="modal">
+
+<div class="modal-content">
+
+<h2>📨 Message Sent!</h2>
+
+<p>
+Thank you for contacting us.
+Larry will pretend to review your message shortly.
+</p>
+
+<br>
+
+<button onclick="closeModal()">Close</button>
+
+</div>
+
+</div>
+
+<footer>
+Created by Adan © 2026
+</footer>
+
+<script>
+
+const observer = new IntersectionObserver(entries => {
+
+entries.forEach(entry => {
+
+if(entry.isIntersecting){
+entry.target.classList.add("active");
+}
+
+});
+
+});
+
+document.querySelectorAll(".reveal").forEach(el=>{
+observer.observe(el);
+});
+
+function openModal(){
+document.getElementById("modal").style.display="flex";
+}
+
+function closeModal(){
+document.getElementById("modal").style.display="none";
+}
+
+</script>
+
+</body>
+</html>

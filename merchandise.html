@@ -1,0 +1,281 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Whisker's Café Merchandise</title>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&family=Caveat:wght@700&display=swap" rel="stylesheet">
+<style>
+*{margin:0;padding:0;box-sizing:border-box;scroll-behavior:smooth}
+body{font-family:Poppins,sans-serif;background:#F5EDE4;color:#4A342E;overflow-x:hidden}
+
+/* Floating paws */
+.paw{
+position:fixed;
+font-size:28px;
+opacity:.07;
+animation:float 15s linear infinite;
+pointer-events:none;
+}
+@keyframes float{
+from{transform:translateY(110vh)}
+to{transform:translateY(-120vh) rotate(360deg)}
+}
+
+nav{
+position:sticky;
+top:0;
+background:rgba(123,90,80,.95);
+backdrop-filter:blur(10px);
+padding:15px;
+z-index:999;
+}
+nav ul{
+display:flex;
+justify-content:center;
+gap:25px;
+list-style:none;
+flex-wrap:wrap;
+}
+nav a{
+color:white;
+text-decoration:none;
+font-weight:700;
+}
+
+.hero{
+min-height:80vh;
+display:flex;
+justify-content:center;
+align-items:center;
+text-align:center;
+padding:40px;
+background:radial-gradient(circle,#d8c2a3 4px,transparent 5px) 0 0/100px 100px;
+}
+
+.hero h1{
+font-family:Caveat,cursive;
+font-size:6rem;
+color:#8B5E52;
+animation:fadeUp 1.2s ease;
+}
+
+.hero p{
+font-size:1.2rem;
+margin-top:15px;
+}
+
+@keyframes fadeUp{
+from{opacity:0;transform:translateY(40px)}
+to{opacity:1;transform:none}
+}
+
+.reveal{
+opacity:0;
+filter:blur(10px);
+transform:translateY(50px);
+transition:1s;
+}
+
+.reveal.active{
+opacity:1;
+filter:none;
+transform:none;
+}
+
+.banner{
+width:90%;
+margin:30px auto;
+background:#CBA889;
+color:white;
+padding:60px;
+border-radius:40px;
+text-align:center;
+}
+
+.gallery{
+width:90%;
+margin:50px auto;
+display:grid;
+grid-template-columns:repeat(2,1fr);
+gap:30px;
+}
+
+.item{
+background:white;
+border-radius:30px;
+overflow:hidden;
+box-shadow:0 10px 25px rgba(0,0,0,.08);
+transition:.4s;
+}
+
+.item:hover{
+transform:translateY(-10px);
+}
+
+.item img{
+width:100%;
+height:350px;
+object-fit:cover;
+transition:.5s;
+}
+
+.item:hover img{
+transform:scale(1.08);
+}
+
+.item-content{
+padding:25px;
+text-align:center;
+}
+
+.badge{
+display:inline-block;
+padding:8px 14px;
+border-radius:20px;
+background:#F5EDE4;
+margin-bottom:10px;
+font-size:.85rem;
+}
+
+.larry{
+width:90%;
+margin:50px auto;
+background:white;
+padding:50px;
+border-radius:35px;
+text-align:center;
+}
+
+.support{
+width:90%;
+margin:50px auto;
+background:#8B5E52;
+color:white;
+padding:60px;
+border-radius:40px;
+text-align:center;
+}
+
+footer{
+text-align:center;
+padding:30px;
+background:white;
+margin-top:40px;
+}
+
+@media(max-width:900px){
+.gallery{
+grid-template-columns:1fr;
+}
+.hero h1{
+font-size:3.5rem;
+}
+}
+</style>
+</head>
+<body>
+
+<div class="paw" style="left:10%">🐾</div>
+<div class="paw" style="left:35%;animation-delay:3s">🐾</div>
+<div class="paw" style="left:70%;animation-delay:7s">🐾</div>
+
+<nav>
+<ul>
+<li><a href="index.html">HOME</a></li>
+<li><a href="meetthecats.html">MEET THE CATS</a></li>
+<li><a href="menu.html">MENU</a></li>
+<li><a href="book.html">BOOK</a></li>
+<li><a href="adopt.html">ADOPT</a></li>
+<li><a href="merchandise.html">MERCHANDISE</a></li>
+<li><a href="about.html">ABOUT US</a></li>
+<li><a href="contact.html">CONTACT</a></li>
+</ul>
+</nav>
+
+<section class="hero">
+<div>
+<h1>Take A Piece Of Whisker's Café Home 🐾</h1>
+<p>Browse our collection of cat-approved merchandise available exclusively in-store.</p>
+</div>
+</section>
+
+<section class="banner reveal">
+<h2>✨ Available Exclusively In Store ✨</h2>
+<p>Visit Whisker's Café to browse our full collection and support our rescue cats.</p>
+</section>
+
+<section class="gallery">
+
+<div class="item reveal">
+<img src="https://placehold.co/700x500/CBA889/FFFFFF?text=Cat+Mugs">
+<div class="item-content">
+<div class="badge">☕ Customer Favourite</div>
+<h2>Purrfect Mugs</h2>
+<p>For coffee, tea and judging people.</p>
+</div>
+</div>
+
+<div class="item reveal">
+<img src="https://placehold.co/700x500/CBA889/FFFFFF?text=Hoodies">
+<div class="item-content">
+<div class="badge">🐱 Cat Approved</div>
+<h2>Whisker's Hoodies</h2>
+<p>Warm, cosy and full of cat energy.</p>
+</div>
+</div>
+
+<div class="item reveal">
+<img src="https://placehold.co/700x500/CBA889/FFFFFF?text=Tote+Bags">
+<div class="item-content">
+<div class="badge">👜 Best Seller</div>
+<h2>Paw Print Totes</h2>
+<p>Perfect for shopping and emergency treats.</p>
+</div>
+</div>
+
+<div class="item reveal">
+<img src="https://placehold.co/700x500/CBA889/FFFFFF?text=Plushies">
+<div class="item-content">
+<div class="badge">❤️ Fan Favourite</div>
+<h2>Larry Plushies</h2>
+<p>The closest thing to taking Larry home.</p>
+</div>
+</div>
+
+</section>
+
+<section class="larry reveal">
+<h2>⭐ Larry's Recommendations ⭐</h2>
+<br>
+<p>• Purrfect Mug</p>
+<p>• Larry Plushie</p>
+<p>• Paw Print Tote</p>
+<br>
+<p><em>(Chosen after sitting on every product.)</em></p>
+</section>
+
+<section class="support reveal">
+<h2>🐾 Every Purchase Helps Our Cats</h2>
+<br>
+<p>All merchandise sales help support food, healthcare and enrichment for our rescue cats.</p>
+</section>
+
+<footer>
+Whisker's Café © 2026
+</footer>
+
+<script>
+const observer=new IntersectionObserver(entries=>{
+entries.forEach(entry=>{
+if(entry.isIntersecting){
+entry.target.classList.add('active');
+}
+});
+});
+
+document.querySelectorAll('.reveal').forEach(el=>observer.observe(el));
+</script>
+
+</body>
+</html>

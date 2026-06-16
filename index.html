@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Whisker's Café | Home</title>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<style>
+*{margin:0;padding:0;box-sizing:border-box;scroll-behavior:smooth}
+body{font-family:'Poppins',sans-serif;background:#F5EDE3;color:#4A342E;overflow-x:hidden}
+body::before{content:"";position:fixed;width:100%;height:100%;background:radial-gradient(circle at 20% 20%, rgba(203,168,137,.25), transparent 30%),radial-gradient(circle at 80% 70%, rgba(155,116,94,.18), transparent 30%);z-index:-1}
+.paw{position:fixed;font-size:30px;opacity:.07;animation:float 15s linear infinite;pointer-events:none}
+@keyframes float{from{transform:translateY(110vh)}to{transform:translateY(-120vh) rotate(360deg)}}
+.logo-area{text-align:center;padding:30px}
+.logo-circle{width:110px;height:110px;margin:auto;background:#fff;border-radius:50%;display:flex;justify-content:center;align-items:center;font-size:55px;box-shadow:0 10px 30px rgba(0,0,0,.08);animation:logoFloat 5s infinite ease-in-out}
+@keyframes logoFloat{50%{transform:translateY(-8px)}}
+.logo-area h1{margin-top:15px;font-size:2.8rem;color:#7B5A50}
+.logo-area p{color:#9B745E}
+nav{position:sticky;top:0;z-index:1000;background:rgba(123,90,80,.9);backdrop-filter:blur(10px)}
+nav ul{display:flex;justify-content:center;gap:35px;padding:18px;list-style:none;flex-wrap:wrap}
+nav a{color:white;text-decoration:none;font-weight:500;transition:.3s}
+nav a:hover{color:#F5EDE3;transform:translateY(-2px)}
+.hero{min-height:85vh;display:flex;align-items:center;justify-content:center;gap:60px;padding:50px}
+.hero img{width:450px;max-width:100%;border-radius:30px;animation:catFloat 5s infinite ease-in-out;box-shadow:0 15px 40px rgba(0,0,0,.15)}
+@keyframes catFloat{50%{transform:translateY(-15px)}}
+.hero-card{background:rgba(255,255,255,.65);backdrop-filter:blur(15px);padding:45px;border-radius:35px;max-width:600px;box-shadow:0 15px 40px rgba(0,0,0,.08)}
+.hero-card h2{font-size:4rem;color:#7B5A50}
+.hero-card p{margin-top:15px;line-height:1.9}
+.btn{display:inline-block;margin-top:25px;padding:16px 35px;background:#9B745E;color:white;text-decoration:none;border-radius:50px;transition:.4s;font-weight:600}
+.btn:hover{transform:translateY(-5px) scale(1.05);background:#7B5A50}
+.adopt{margin:60px;padding:80px;background:#CBA889;color:white;text-align:center;border-radius:50px;box-shadow:0 15px 40px rgba(0,0,0,.08)}
+.adopt h2{font-size:3rem;margin-bottom:20px}
+.section-title{text-align:center;font-size:3rem;color:#7B5A50;margin-top:40px;margin-bottom:50px}
+.cards{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:25px;padding:0 8%}
+.card{background:white;border-radius:25px;overflow:hidden;box-shadow:0 10px 25px rgba(0,0,0,.08);transition:.4s}
+.card:hover{transform:translateY(-12px)}
+.card img{width:100%;height:300px;object-fit:cover}
+.card-content{padding:20px}
+.card h3{color:#7B5A50}
+.reveal{opacity:0;filter:blur(10px);transform:translateY(60px);transition:1s}
+.reveal.active{opacity:1;filter:blur(0);transform:translateY(0)}
+footer{margin-top:80px;background:#7B5A50;color:white;padding:35px;text-align:center}
+@media(max-width:900px){.hero{flex-direction:column;text-align:center}.hero-card h2{font-size:3rem}.adopt{margin:20px;padding:50px 25px}}
+</style>
+</head>
+<body>
+<div class="paw" style="left:10%">🐾</div>
+<div class="paw" style="left:30%;animation-delay:4s">🐾</div>
+<div class="paw" style="left:90%;animation-delay:2s">🐾</div>
+
+<div class="logo-area">
+<div class="logo-circle">🐱</div>
+<h1>Whisker's Café</h1>
+<p>Where Coffee Meets Purrfection</p>
+</div>
+
+<nav>
+<ul>
+<li><a href="index.html">HOME</a></li>
+<li><a href="meetthecats.html">MEET THE CATS</a></li>
+<li><a href="menu.html">MENU</a></li>
+<li><a href="book.html">BOOK</a></li>
+<li><a href="adopt.html">ADOPT</a></li>
+<li><a href="merchandise.html">MERCHANDISE</a></li>
+<li><a href="about.html">ABOUT US</a></li>
+<li><a href="contact.html">CONTACT</a></li>
+</ul>
+</nav>
+
+<section class="hero">
+<img src="https://i.pinimg.com/736x/8e/1f/50/8e1f50ecd12004269fbfa0ada2a9d.jpg" alt="Whisker's Cafe Hero Cat">
+<div class="hero-card reveal">
+<h2>Welcome Human!</h2>
+<p>The cats have officially approved your visit. Enjoy speciality coffee, fresh pastries and endless cuddles from our rescue cats.</p>
+<a href="BookPage_V2_Animated.html" class="btn">Book A Visit</a>
+</div>
+</section>
+
+<section class="adopt reveal">
+<h2>Every Cat Deserves A Loving Home</h2>
+<p>Meet our wonderful rescue cats and discover your future best friend.</p>
+<a href="AdoptPage_V2.html" class="btn">Adopt Now</a>
+</section>
+
+<h2 class="section-title reveal">Meet Our Little Angels</h2>
+<div class="cards">
+<div class="card reveal">
+<img src="https://i.pinimg.com/736x/32/3a/9e/323a9eafe64e057cfb489e8d1e1ec5b9.jpg" alt="Poppy">
+<div class="card-content">
+<h3>Poppy</h3>
+<p>Professional nap expert.</p>
+</div>
+</div>
+<div class="card reveal">
+<img src="https://i.pinimg.com/736x/69/d4/f5/69d4f553a801270cc080e78402855353.jpg" alt="Mr Beans">
+<div class="card-content">
+<h3>Mr Beans</h3>
+<p>Chief cuddle officer.</p>
+</div>
+</div>
+<div class="card reveal">
+<img src="https://placehold.co/500x400/CBA889/FFFFFF?text=PURRLOCK" alt="Purrlock Holmes">
+<div class="card-content">
+<h3>Purrlock Holmes</h3>
+<p>Treat quality inspector.</p>
+</div>
+</div>
+</div>
+
+<footer>🐾 Whisker's Café © 2026</footer>
+
+<script>
+const observer = new IntersectionObserver(entries=>{
+entries.forEach(entry=>{if(entry.isIntersecting){entry.target.classList.add('active');}});
+});
+document.querySelectorAll('.reveal').forEach(el=>observer.observe(el));
+</script>
+</body>
+</html>
